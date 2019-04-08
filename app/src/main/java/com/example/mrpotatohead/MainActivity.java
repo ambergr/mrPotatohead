@@ -15,6 +15,92 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (savedInstanceState != null) {
+            int armsVisibility = savedInstanceState.getInt("arms_visibility");
+            ImageView arms = (ImageView) findViewById(R.id.arms);
+            arms.setVisibility(armsVisibility);
+
+            int earsVisibility = savedInstanceState.getInt("ears_visibility");
+            ImageView ears = (ImageView) findViewById(R.id.ears);
+            ears.setVisibility(earsVisibility);
+
+            int eyebrowsVisibility = savedInstanceState.getInt("eyebrows_visibility");
+            ImageView eyebrows = (ImageView) findViewById(R.id.eyebrows);
+            eyebrows.setVisibility(eyebrowsVisibility);
+
+            int eyesVisibility = savedInstanceState.getInt("eyes_visibility");
+            ImageView eyes = (ImageView) findViewById(R.id.eyes);
+            eyes.setVisibility(eyesVisibility);
+
+            int glassesVisibility = savedInstanceState.getInt("glasses_visibility");
+            ImageView glasses = (ImageView) findViewById(R.id.glasses);
+            glasses.setVisibility(glassesVisibility);
+
+            int hatVisibility = savedInstanceState.getInt("hat_visibility");
+            ImageView hat = (ImageView) findViewById(R.id.hat);
+            hat.setVisibility(hatVisibility);
+
+            int mouthVisibility = savedInstanceState.getInt("mouth_visibility");
+            ImageView mouth = (ImageView) findViewById(R.id.mouth);
+            mouth.setVisibility(mouthVisibility);
+
+            int mustacheVisibility = savedInstanceState.getInt("mustache_visibility");
+            ImageView mustache = (ImageView) findViewById(R.id.mustache);
+            mustache.setVisibility(mustacheVisibility);
+
+            int shoesVisibility = savedInstanceState.getInt("shoes_visibility");
+            ImageView shoes = (ImageView) findViewById(R.id.shoes);
+            shoes.setVisibility(shoesVisibility);
+
+            int noseVisibility = savedInstanceState.getInt("nose_visibility");
+            ImageView nose = (ImageView) findViewById(R.id.nose);
+            nose.setVisibility(noseVisibility);
+
+        }
+
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState); // always call super
+        ImageView arms = (ImageView) findViewById(R.id.arms);
+        int armsVis = arms.getVisibility();
+        outState.putInt("arms_visibility", armsVis);
+
+        ImageView ears = (ImageView) findViewById(R.id.ears);
+        int earsVis = ears.getVisibility();
+        outState.putInt("ears_visibility", earsVis);
+
+        ImageView eyebrows = (ImageView) findViewById(R.id.eyebrows);
+        int eyebrowsVis = eyebrows.getVisibility();
+        outState.putInt("eyebrows_visibility", eyebrowsVis);
+
+        ImageView eyes = (ImageView) findViewById(R.id.eyes);
+        int eyesVis = eyes.getVisibility();
+        outState.putInt("eyes_visibility", eyesVis);
+
+        ImageView glasses = (ImageView) findViewById(R.id.glasses);
+        int glassesVis = glasses.getVisibility();
+        outState.putInt("glasses_visibility", glassesVis);
+
+        ImageView hat = (ImageView) findViewById(R.id.hat);
+        int hatVis = hat.getVisibility();
+        outState.putInt("hat_visibility", hatVis);
+
+        ImageView mouth = (ImageView) findViewById(R.id.mouth);
+        int mouthVis = mouth.getVisibility();
+        outState.putInt("mouth_visibility", mouthVis);
+
+        ImageView mustache = (ImageView) findViewById(R.id.mustache);
+        int mustacheVis = mustache.getVisibility();
+        outState.putInt("mustache_visibility", mustacheVis);
+
+        ImageView shoes = (ImageView) findViewById(R.id.shoes);
+        int shoesVis = shoes.getVisibility();
+        outState.putInt("shoes_visibility", shoesVis);
+
+        ImageView nose = (ImageView) findViewById(R.id.nose);
+        int noseVis = nose.getVisibility();
+        outState.putInt("nose_visibility", noseVis);
     }
 
     public void checkClicked(View view) {
