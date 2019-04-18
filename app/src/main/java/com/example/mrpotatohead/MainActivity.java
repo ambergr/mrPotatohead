@@ -2,19 +2,18 @@ package com.example.mrpotatohead;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private View view;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // reminds if the pictures ere visibile or not, and if the game is recreated and
+        // makes this visible in the app
         if (savedInstanceState != null) {
             int armsVisibility = savedInstanceState.getInt("arms_visibility");
             ImageView arms = (ImageView) findViewById(R.id.arms);
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // reminds the visbility of the images
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState); // always call super
         ImageView arms = (ImageView) findViewById(R.id.arms);
@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("nose_visibility", noseVis);
     }
 
+    //this function set an image on visible if it is clicked
     public void checkClicked(View view) {
         CheckBox checkbox = (CheckBox) view;
         String checkboxstr = checkbox.getText().toString();
